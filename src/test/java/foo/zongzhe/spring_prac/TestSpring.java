@@ -14,4 +14,22 @@ public class TestSpring {
         System.out.println(user);
         user.add();
     }
+
+    @Test
+    public void testUserSet() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+
+        User user = context.getBean("user2", User.class);
+        System.out.println(user);
+        user.add();
+    }
+
+    @Test
+    public void testUserWithConstructor() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+
+        User user = context.getBean("user3", User.class);
+        System.out.println(user);
+        user.add();
+    }
 }

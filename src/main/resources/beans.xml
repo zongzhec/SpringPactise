@@ -3,7 +3,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="foo.zongzhe.spring_prac.User">
+    <!--配置User对象创建-->
+    <bean id="user1" class="foo.zongzhe.spring_prac.User"/>
 
+    <!--使用set方法注入属性-->
+    <bean id="user2" class="foo.zongzhe.spring_prac.User">
+        <!--使用property完成属性注入-->
+        <property name="id" value="10"/>
+        <property name="name" value="Zongzhe"/>
+    </bean>
+
+    <!-- 有参数构造注入属性 -->
+    <bean id="user3" class="foo.zongzhe.spring_prac.User">
+        <constructor-arg name="id" value="20"/>
+        <constructor-arg name="name" value="czz"/>
     </bean>
 </beans>
